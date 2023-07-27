@@ -3,16 +3,16 @@
 /**
 *fun_push - function for fun push
 *@stack: liststack
-*@last_line: lineno
+*@line_number: lineno
 */
 
-void fun_push(stack_t **stack, __attribute__((unused))unsigned int last_line)
+void fun_push(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
 	stack_t *nouv, *cont;
 
-	if (world_var.line[1] == NULL || fun_check_num(global.line[1]) == -1)
+	if (world_var.line[1] == NULL || fun_check_num(world_var.line[1]) == -1)
 	{
-		fprintf(stderr, "L%i: usage: push num\n", last_line);
+		fprintf(stderr, "L%i: usage: push integer\n", line_number);
 		fun_release(NULL, NULL, 'r');
 		fun_free_dlistint(*stack);
 		free(world_var.line);

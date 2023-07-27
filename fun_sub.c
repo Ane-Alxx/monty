@@ -12,7 +12,7 @@ void fun_sub(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%u: fatal, stack too small\n", line_number);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
 		fun_release(NULL, NULL, 'r');
 		fun_free_dlistint(*stack);
 		free(world_var.line);

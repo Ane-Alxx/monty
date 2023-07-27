@@ -3,16 +3,16 @@
 /**
 *fun_swap - function for fun swap
 *@stack: liststack
-*@last_line: lineno
+*@line_number: lineno
 */
 
-void fun_swap(stack_t **stack, unsigned int last_line)
+void fun_swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *uptop, *updown;
 
 	if (stack[0] == '\0' || stack[0]->next == '\0')
 	{
-		fprintf(stderr, "L%i: fatal, stack too small\n", last_line);
+		fprintf(stderr, "L%i: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	uptop = stack[0];

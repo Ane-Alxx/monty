@@ -12,7 +12,7 @@ void fun_pop(stack_t **stack, unsigned int last_line)
 
 	if (*stack == '\0')
 	{
-		fprintf(stderr, "L%i: stack is empty\n", last_line);
+		fprintf(stderr, "L%i: can't pop an empty stack\n", last_line);
 		fun_release(NULL, NULL, 'r');
 		fun_free_dlistint(*stack);
 		free(world_var.line);
